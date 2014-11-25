@@ -7,8 +7,8 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	void xuanzepaixu();
-	xuanzepaixu();
+	void lianjie();
+	lianjie();
 	return 0;
 }
 
@@ -30,7 +30,7 @@ void paixu()
 	printf("最大的串是：%s\n", string);
 }
 
-
+//‘选择排序’
 void xuanzepaixu()
 {
 	int a[10];
@@ -54,4 +54,32 @@ void xuanzepaixu()
 		
 	for (i = 0; i<10; i++)
 		printf("%d ", a[i]);
+}
+
+//链接两个字符串
+void lianjie()
+{
+	char str1[30], str2[10];
+	int i,end;
+
+	printf("输入两个字符串：\n");
+	printf("str1=");
+	gets_s(str1);
+	printf("str2=");
+	gets_s(str2);
+
+	//找出末尾
+	for (i = 0; i < 30; i++)
+	{
+		if (str1[i] == '\0'){
+			end = i;
+			break;
+		}
+	}
+	for (i = 0; str2[i] != '\0'; i++)
+		str1[end + i] = str2[i];
+
+	printf("把str2接到str1的末尾后：\n");
+	puts(str1);
+
 }
